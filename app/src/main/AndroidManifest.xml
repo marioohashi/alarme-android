@@ -26,6 +26,9 @@
         </activity>
 
         <receiver android:name=".MyBroadcastReceiver"></receiver>
+
+
     </application>
+    <uses-sdk tools:overrideLibrary="com.google.firebase.analytics.ktx" />
 
 </manifest>
