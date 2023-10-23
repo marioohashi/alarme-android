@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AlarmOfficial</string>
+    <string name="editTextNumber">Texting in seconds</string>
+    <string name="button">TAP HERE GO!</string>
+</resources>
