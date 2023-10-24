@@ -7,6 +7,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -30,5 +31,15 @@ class MainActivity : AppCompatActivity() {
             am.set(AlarmManager.RTC_WAKEUP,System.currentTimeMillis() + (sec*1000),p1)
             Toast.makeText(applicationContext,"O alarme irá tocar em $sec segundos.", Toast.LENGTH_LONG).show()
         }
+
+        val crashButton = Button(this)
+        crashButton.text = "Test Crash"
+        crashButton.setOnClickListener {
+            throw RuntimeException("Test Crash") // Force a crash
+        }
+
+        addContentView(crashButton, ViewGroup.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT))
     }
 }
